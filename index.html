@@ -4,9 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js" defer></script>
+
+    <style>
+        :root{
+            --nav-color: rgb(109, 109, 109);
+        }
+
+        html, body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        body{
+            margin-top: 64px;
+        }
+
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: fit-content;
+            padding: 0 10%;
+            background-color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 32px;
+        }
+        nav a{
+            display: inline-block;
+            padding:  32px 8px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--nav-color) ;
+            font-weight: 700;
+            box-sizing: border-box;
+            text-transform: capitalize;
+        }
+        
+        nav a:hover{
+            padding:  32px 8px 28px;
+            border-bottom: 4px solid var(--nav-color);
+        }
+
+        nav a.active{
+            padding:  32px 8px 28px;
+            border-bottom: 4px solid black;
+            color: black;
+        }
+
+        section{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+        }
+
+        #section1{
+            height: 90vh;
+            background-color:rgb(180, 235, 216);
+        }        
+        #section2{
+            height: 50vh;
+            background-color:rgb(127, 178, 255);
+        }        
+        #section3{
+            height: 250vh;
+            background-color:rgb(240, 189, 241);
+        }        
+        #section4{
+            height: 110vh;
+            background-color:rgb(248, 230, 191);
+        }            
+        
+    </style>
 </head>
 <body>
-    
+    <nav>
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+        <a href="#section4">Section 4</a>
+      </nav>
+      <main>
+          <section id="section1" data-spy>Section 1</section>
+          <section id="section2" data-spy>Section 2</section>
+          <section id="section3" data-spy>Section 3</section>
+          <section id="section4" data-spy>Section 4</section>
+      </main>
 </body>
 </html>
